@@ -9,10 +9,7 @@ import 'network/cache_helper.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  RequestConfiguration configuration=RequestConfiguration(
-    testDeviceIds: <String>['CA39619EDE492DA63B17CB6FEBE0056A']
-  );
-  MobileAds.instance.updateRequestConfiguration(configuration);
+  MobileAds.instance.initialize();
   await CacheHelper.init();
   sizeFont= CacheHelper.getData(key:'fontSize')??20;
 

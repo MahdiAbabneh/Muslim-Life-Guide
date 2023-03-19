@@ -7,7 +7,7 @@ import 'Variable_declarations.dart';
 import 'data.dart';
 Data ?list;
 Future getPTData() async {
-  var res = await http.get(Uri.parse(Uri.encodeFull("http://api.aladhan.com/v1/timingsByAddress?address=${cityUser!}")));
+  var res = await http.get(Uri.parse(Uri.encodeFull("http://api.aladhan.com/v1/timingsByAddress?address=${cityUser!}&method=16")));
   var data = jsonDecode(res.body);
   list = Data.fromJson(data);
   print(list!.data.meta.timezone);
